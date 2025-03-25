@@ -1,0 +1,28 @@
+<!-- views/edit.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Submission</title>
+  </head>
+  <body>
+    <h1>Edit Submission</h1>
+    <form action="/submissions/<%= submission._id %>?_method=PUT" method="POST">
+      <div>
+        <label for="name">Submission Name:</label>
+        <input type="text" name="name" id="name" value="<%= submission.name %>" required />
+      </div>
+      <div>
+        <label for="difficulty">Difficulty:</label>
+        <input type="text" name="difficulty" id="difficulty" value="<%= submission.difficulty %>" required />
+      </div>
+      <div>
+        <label for="description">Description:</label>
+        <input type="text" name="description" id="description" value="<%= submission.description %>" required />
+      </div>
+      <button type="submit">Update Submission</button>
+    </form>
+    <a href="/submissions/<%= submission._id %>">Cancel</a>
+  </body>
+</html>

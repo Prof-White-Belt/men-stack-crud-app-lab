@@ -1,0 +1,19 @@
+<!-- views/show.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= submission.name %></title>
+  </head>
+  <body>
+    <h1><%= submission.name %></h1>
+    <p>Difficulty: <%= submission.difficulty %></p>
+    <p>Description: <%= submission.description %></p>
+    <a href="/submissions/<%= submission._id %>/edit">Edit</a>
+    <form action="/submissions/<%= submission._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+    <a href="/submissions">Back to All Submissions</a>
+  </body>
+</html>
