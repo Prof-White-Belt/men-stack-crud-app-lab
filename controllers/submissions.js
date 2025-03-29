@@ -41,7 +41,7 @@ router.put("/:id", async (req, res) => {
   res.redirect(`/submissions/${submission._id}`);
 });
 
-// DELETE /submissions/:id - Delete submission
+// DELETE /submissions/:id - Delete submissionhttps://chatgpt.com/c/67e47e1a-0d68-800a-9b04-eaf2d4ff0a84
 router.delete("/:id", async (req, res) => {
   await Submission.findByIdAndDelete(req.params.id);
   res.redirect("/submissions");

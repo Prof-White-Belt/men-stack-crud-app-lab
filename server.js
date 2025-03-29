@@ -20,6 +20,11 @@ app.use (morgan("dev"))
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
 // Routes
+// Redirect root path to /submissions
+app.get("/", (req, res) => {
+  res.redirect("/submissions");
+});
+
 app.use("/submissions", submissionsRouter); // Route handling for submissions
 
 app.listen(PORT, () => {
